@@ -1,101 +1,56 @@
-import Image from "next/image";
+import { GeoForm } from "@/components/GeoForm";
+import { Person } from "@/components/Person";
 
-export default function Home() {
+const Page = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="bg-gray-900 h-screen">
+      <div className="flex flex-col justify-center items-center">
+      <h1 className="font-bold text-3xl m-4">Os homens mais ricos do Mundo</h1>
+      <h3 className="text-2xl font-bold ">em <span className="text-3xl text-blue-600">2025</span></h3>
     </div>
-  );
+    <div className="flex flex-wrap">
+    
+      <Person 
+          name="Elon Musk"
+          avatar="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcReXPFAJ5cUhfTLDRA7ZJlBZdwOmO7AfLRhazE1rl5-nJhk0NHeTtwX983IoqiSjrPB-R4OiIN_uaPO9jqW41E2Ww"
+          roles={['CEO da Tesla', 'CEO da SpaceX', 'CEO da X']} 
+          ranking={1} 
+          fortuna={421.2}    />
+      <Person 
+        name="Jeff Bezos"
+        avatar="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS3xPE31tUdKcXYpMWPXAydUv28KL_5uWDal2Lf3-BwpJtLSV4Q_Wr2cr9xiq4KKyrxd0uQiaEdX0SMXo4"
+        roles={['CEO da Amazon', 'CEO da BlueOrigin']}
+        ranking={2}
+        fortuna={233.5} 
+      />
+      <Person 
+          name="Larry Ellison"
+          roles={['CEO da Oracle']}
+          avatar="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTP3g4IfhBLYhaa5TkwOAheqasjzmLS8J8UPbiY5Z7ScBEeGr-8U6i_udhjISrHh7y0f6PhCyDqoNZUlkY"
+          ranking={3}
+          fortuna={209.7}       />
+        <Person 
+          name="Mark Zuckerberg"
+          roles={['CEO da Meta']}
+          avatar='https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg'
+          ranking={4}
+          fortuna={202.5}       />
+          <Person 
+          name="Bernard Arnault"
+          roles={['CEO da LVMH']}
+          avatar="https://economicnewsbrasil.com.br/wp-content/uploads/2024/06/Bernard-Arnault.webp"
+          ranking={5}
+          fortuna={168.8}       />
+          <Person 
+          name="Larry Page"
+          roles={['CEO da Google']}
+          avatar="https://hips.hearstapps.com/hmg-prod/images/gettyimages-83414114.jpg"
+          ranking={6}
+          fortuna={156}       />
+  
+    </div>
+    </div>
+  )
 }
+
+export default Page;
